@@ -8,7 +8,6 @@ const Title = () => {
         setTime(new Date())
     }
 
-
     const getMeal = (time) => {
         var hour = time.getHours()
 
@@ -28,10 +27,9 @@ const Title = () => {
           };
       }, []);
 
-
     return (
         <div>
-            <h1>{getMeal(time)}  {time.toLocaleTimeString()}</h1>
+            <h1 className="mealtype">{getMeal(time)}</h1><h2 className="time">{time.toLocaleTimeString()}</h2>
         </div>
     )
 }

@@ -18,9 +18,13 @@ const App = () => {
   }, [])
 
   const fetchMeals = async () => {
-    const res = await fetch("http://localhost:5000/web")
-    console.log(res);
-    const data = await res.json()
+    var data = 0
+    try {
+      var res = await fetch("http://localhost:5000/web")
+      data = await res.json()
+    } catch (err) {
+      data = []
+    }
     return data
   }
 
@@ -34,6 +38,7 @@ const App = () => {
               <Title 
               />
               <Header
+                meals = {meals}
               />
             </>
           )}
