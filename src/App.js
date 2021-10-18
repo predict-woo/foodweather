@@ -22,7 +22,7 @@ const App = () => {
   const fetchMeals = async () => {
     var data = 0
     try {
-      var res = await fetch("http://localhost:5000/web")
+      var res = await fetch("http://localhost:8000/")
       data = await res.json()
     } catch (err) {
       data = []
@@ -41,14 +41,14 @@ const App = () => {
           exact
           render={(props) => (
             <>
-              <Current
+              {/* <Current
                 choice = {choice}
                 meals = {meals}
               />
               <Info
                   choice = {choice}
                   meals = {meals}
-              />
+              /> */}
               <Header
                 choice = {choice}
                 meals = {meals}
