@@ -9,19 +9,19 @@ const Weather = ({meals,choice}) => {
     return (
         <div>
             {meals.length === 0 ? (<h3>404 Network Error</h3>) : 
-            (meals[choice].rating<=1 ? (<div className={"weather thunder"}>
+            (meals[choice].rating<=20 ? (<div className={"weather thunder"}>
                 <img src = {Thunder}/>
             </div>):
-            (meals[choice].rating<=2 ? (<div className={"weather thunder"}>
+            (meals[choice].rating<=40 ? (<div className={"weather thunder"}>
             <img src = {Thunder}/>
         </div>) : 
-            (meals[choice].rating<=3 ? (<div className={"weather rain"}>
+            (meals[choice].rating<=60 ? (<div className={"weather rain"}>
             <img src = {Rain}/>
         </div>) :
-            (meals[choice].rating<=4 ? (<div className={"weather cloud"}>
+            (meals[choice].rating<=80 ? (<div className={"weather cloud"}>
             <img src = {Cloud}/>
         </div>) : 
-            (meals[choice].rating<=5 ? (<div className={"weather clear"}>
+            (meals[choice].rating<=100 ? (<div className={"weather clear"}>
             <img src = {Clear}/>
         </div>) : 
             (<h1>Error</h1>)
