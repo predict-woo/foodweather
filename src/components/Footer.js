@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className="footer">
             <Link to="/about">About</Link>
         </footer>
     )

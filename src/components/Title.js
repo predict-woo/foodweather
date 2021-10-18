@@ -28,8 +28,9 @@ const Title = () => {
       }, []);
 
     return (
-        <div>
-            <h1 className="mealtype">{getMeal(time)}</h1><h2 className="time">{time.toLocaleTimeString()}</h2>
+        <div className="title">
+            <h1 className="mealtype">{getMeal(time)}</h1>
+            <h2 className="time">{time.getHours()}시 {time.getMinutes()}분</h2>
         </div>
     )
 }
