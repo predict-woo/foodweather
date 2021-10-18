@@ -8,10 +8,10 @@ const Header = ({meals,choice}) => {
 	return (
 		<div className="header">
 			<div className="front">
-				<Weather
+				{/* <Weather
 					meals = {meals}
 					choice = {choice}
-				/>
+				/> */}
 			</div>
 			<Rating
 				meals = {meals}
