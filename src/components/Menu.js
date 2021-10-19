@@ -1,8 +1,7 @@
-const Menu = ({meals,choice}) => {
-    console.log(meals[choice])
+const Menu = ({meal}) => {
     return (
         <div className='menu'>
-            {meals.length === 0 ? (<h3></h3>) : (<h3>{''+meals[choice].menu}</h3>)}
+            {meal === undefined ? (<h3></h3>) : (<h3>{''+meal.menu}</h3>)}
         </div>
     )
 }

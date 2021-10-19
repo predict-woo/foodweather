@@ -5,23 +5,23 @@ import Thunder from "../icons/svg/thunderstorms-rain.svg"
 
 
 
-const Weather = ({meals,choice}) => {
+const Weather = ({meal}) => { 
     return (
         <div>
-            {meals.length === 0 ? (<h3>404 Network Error</h3>) : 
-            (meals[choice].rating<=20 ? (<div className={"weather thunder"}>
+            {meal.score === undefined ? (<h3>404 Network Error</h3>) : 
+            (meal.score<=20 ? (<div className={"weather thunder"}>
                 <img src = {Thunder}/>
             </div>):
-            (meals[choice].rating<=40 ? (<div className={"weather thunder"}>
+            (meal.score<=40 ? (<div className={"weather thunder"}>
             <img src = {Thunder}/>
         </div>) : 
-            (meals[choice].rating<=60 ? (<div className={"weather rain"}>
+            (meal.score<=60 ? (<div className={"weather rain"}>
             <img src = {Rain}/>
         </div>) :
-            (meals[choice].rating<=80 ? (<div className={"weather cloud"}>
+            (meal.score<=80 ? (<div className={"weather cloud"}>
             <img src = {Cloud}/>
         </div>) : 
-            (meals[choice].rating<=100 ? (<div className={"weather clear"}>
+            (meal.score<=100 ? (<div className={"weather clear"}>
             <img src = {Clear}/>
         </div>) : 
             (<h1>Error</h1>)

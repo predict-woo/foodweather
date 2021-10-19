@@ -1,10 +1,9 @@
 // import Weather from "./Weather"
-import Rating from "./Rating"
+import Score from "./Score"
 import Menu from "./Menu"
 
 const Header = ({meals,choice}) => {
-	console.log(meals)
-	console.log(choice)
+	const meal = meals[choice];
 	return (
 		<div className="header">
 			<div className="front">
@@ -13,13 +12,11 @@ const Header = ({meals,choice}) => {
 					choice = {choice}
 				/> */}
 			</div>
-			<Rating
-				meals = {meals}
-				choice = {choice}
+			<Score
+				meal = {meal}
 			/>
 			<Menu
-				meals = {meals}
-				choice = {choice}
+				meal = {meal}
 			/>
 		</div>
 	)

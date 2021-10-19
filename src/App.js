@@ -5,6 +5,7 @@ import About from "./components/About"
 import Title from "./components/Title"
 import Header from "./components/Header"
 import Body from "./components/Body"
+import Comment from "./components/Comment"
 
 const App = () => {
 
@@ -12,22 +13,18 @@ const App = () => {
   const [choice,setChoice] = useState(0)
 
   useEffect(() => {
-    const getMeals = async () => {
-      const mealsFromServer = await fetchMeals()
-      setMeals(mealsFromServer)
-    }
-    getMeals()
+    fetchMeals()
   }, [])
 
   const fetchMeals = async () => {
-    var data = 0
+    var mealsData = [];
     try {
       var res = await fetch("http://localhost:8000/meals")
-      data = await res.json()
+      mealsData = await res.json()
     } catch (err) {
-      data = []
+      mealsData = []
     }
-    return data
+    setMeals(mealsData)
   }
 
   const onChoice = (index) => {
@@ -57,6 +54,9 @@ const App = () => {
                 choice = {choice}
                 meals = {meals}
                 onChoice = {onChoice}
+              />
+              <Comment 
+                meal = {meals[choice]}
               />
             </>
           )}

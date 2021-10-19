@@ -5,6 +5,7 @@ const Body = ({meals,choice,onChoice}) => {
         <div className="container">
             {meals.map((meal,index)=>(
                 <Tile
+                    key = {index}
                     index = {index}
                     meal = {meal}
                     onChoice = {onChoice}
