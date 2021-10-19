@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Comment = ({meal}) => {
 
@@ -11,8 +12,8 @@ const Comment = ({meal}) => {
     const fetchMealComments = async () => {
         var mealCommentsData = []
         try {
-          var res = await fetch(`http://localhost:8000/meals/${meal.id}/comments`)
-          mealCommentsData = await res.json()
+          var res = await axios.get(`http://localhost:8000/meals/${meal.id}/comments`);
+          mealCommentsData = res.data
         } catch (err) {
           mealCommentsData = []
         }

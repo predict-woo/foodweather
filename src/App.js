@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom"
+import axios from "axios"
 import Footer from "./components/Footer"
 import About from "./components/About"
 import Title from "./components/Title"
 import Header from "./components/Header"
 import Body from "./components/Body"
 import Comment from "./components/Comment"
+import Rating from "./components/Rating"
 
 const App = () => {
 
@@ -19,8 +21,8 @@ const App = () => {
   const fetchMeals = async () => {
     var mealsData = [];
     try {
-      var res = await fetch("http://localhost:8000/meals")
-      mealsData = await res.json()
+      var res = await axios.get("http://localhost:8000/meals");
+      mealsData = res.data;
     } catch (err) {
       mealsData = []
     }
@@ -55,6 +57,7 @@ const App = () => {
                 meals = {meals}
                 onChoice = {onChoice}
               />
+              <Rating meal={meals[choice]} />
               <Comment 
                 meal = {meals[choice]}
               />
