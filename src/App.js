@@ -22,7 +22,7 @@ const App = () => {
   const fetchMeals = async () => {
     var data = 0
     try {
-      var res = await fetch("http://localhost:8000/")
+      var res = await fetch("http://localhost:8000/meals")
       data = await res.json()
     } catch (err) {
       data = []
