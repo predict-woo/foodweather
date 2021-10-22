@@ -21,7 +21,7 @@ const App = () => {
   const fetchMeals = async () => {
     var mealsData = [];
     try {
-      var res = await axios.get("http://localhost:8000/meals");
+      var res = await axios.get("http://localhost:8000/meals/");
       mealsData = res.data;
     } catch (err) {
       mealsData = []
@@ -33,41 +33,47 @@ const App = () => {
     setChoice(index)
   }
 
-  return (
-    <Router>
-        <Route
-          path='/'
-          exact
-          render={(props) => (
-            <>
-              {/* <Current
-                choice = {choice}
-                meals = {meals}
-              />
-              <Info
+  if (meals.length > 0) {
+    return (
+      <Router>
+          <Route
+            path='/'
+            exact
+            render={(props) => (
+              <>
+                {/* <Current
                   choice = {choice}
                   meals = {meals}
-              /> */}
-              <Header
-                choice = {choice}
-                meals = {meals}
-              />
-              <Body
-                choice = {choice}
-                meals = {meals}
-                onChoice = {onChoice}
-              />
-              <Rating meal={meals[choice]} />
-              <Comment 
-                meal = {meals[choice]}
-              />
-            </>
-          )}
-        />
-        <Route path='/about' component={About} />
-        <Footer />
-    </Router> 
-  )
+                />
+                <Info
+                    choice = {choice}
+                    meals = {meals}
+                /> */}
+                <Header
+                  choice = {choice}
+                  meals = {meals}
+                />
+                <Body
+                  choice = {choice}
+                  meals = {meals}
+                  onChoice = {onChoice}
+                />
+                <Rating meal={meals[choice]} />
+                <Comment 
+                  meal = {meals[choice]}
+                />
+              </>
+            )}
+          />
+          <Route path='/about' component={About} />
+          <Footer />
+      </Router> 
+    )
+  } else {
+    return (
+      <p>Loading...</p>
+    )
+  }
 }
 
 
