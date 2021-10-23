@@ -8,6 +8,8 @@ import Header from "./components/Header"
 import Body from "./components/Body"
 import Comment from "./components/Comment"
 import Rating from "./components/Rating"
+import Current from "./components/Current"
+
 
 const App = () => {
 
@@ -33,6 +35,8 @@ const App = () => {
     setChoice(index)
   }
 
+  var meal = meals[choice]
+
   if (meals.length > 0) {
     return (
       <Router>
@@ -41,15 +45,16 @@ const App = () => {
             exact
             render={(props) => (
               <>
-                {/* <Current
+                <Body
                   choice = {choice}
                   meals = {meals}
+                  onChoice = {onChoice}
                 />
-                <Info
+                <Current
                     choice = {choice}
                     meals = {meals}
-                /> */}
-                <Header
+                />
+                {/* <Header
                   choice = {choice}
                   meals = {meals}
                 />
@@ -58,10 +63,10 @@ const App = () => {
                   meals = {meals}
                   onChoice = {onChoice}
                 />
-                <Rating meal={meals[choice]} />
+                <Rating meal={meal} />
                 <Comment 
-                  meal = {meals[choice]}
-                />
+                  meal = {meal}
+                /> */}
               </>
             )}
           />
