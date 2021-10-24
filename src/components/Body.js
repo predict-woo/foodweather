@@ -2,7 +2,7 @@ import Tile from "./Tile"
 
 const Body = ({meals,choice,onChoice}) => {
     return (
-        <div className="container">
+        <div className="body">
             {meals.map((meal,index)=>(
                 <Tile
                     key = {index}

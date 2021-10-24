@@ -12,7 +12,8 @@ const Info = ({meal}) => {
                     meal = {meal}
                     />
                 <div className="info now">{mealtimeinstr}</div>
-                <div className="info score">{meal.score}</div>
+                <div className="info score">{meal.score}점</div>
+                <div className="info menu">{meal.menu}</div>
             </div>
         )
         

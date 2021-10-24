@@ -8,89 +8,85 @@
 
 body {
   background-color: #ebebeb;
-}
-
-.full {
-  display: flex;
+  margin: 0;
 }
 
 .toolbar {
   display:flex;
+  justify-content: left;
   height: 3rem;
+  width: 100%;
+  background-color: #68a0f3;
+  color: white;
+}
+
+.full {
+  display: flex;
+  width: 100%
+}
+
+.body {
+  width:70%;
+  background-color: #F2FBFF;
+  padding: 10px 10px 10px 10px;
 }
 
 .current {
   width:30% ;
   min-width: 25rem;
   text-align: center;
+  background-color: #100E3B;
+}
+
+div.toolbar > * {
+  height: 80%;
+  margin-top: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .graph {
-  width:80%;
+  width: 70%;
   margin:auto;
-}
-
-.title {
-  font-family: 'font';
-  width: 100%;
-  text-align: center;
-}
-
-.header {
-  width: 98%;
-  text-align: center;
-  /* background-color: rgba(0, 0, 0, .3); */
-  border-radius: 10px;
-  margin: 1%
-}
-
-.front {
-  width: 20%;
-  margin:auto
-}
-
-
-
-.btn {
-  display: inline-block;
-  background: #000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 15px;
-  font-family: inherit;
-}
-
-.container {
-  width: 50%
 }
 
 .tile {
   display: flex;
+  align-items: center;
   font-size: 16px;
-  width: 100%;
+  width: 94%;
   height: 3rem;
   background-color: white;
   border-radius: 5px;
-  padding: 1% 1% 1% 1%;
+  padding: 0.5% 0% 0.5% 1%;
   margin: 1% 1% 1% 1%;
   transition: all 0.3s ease-in-out;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 15px;
 }
 
-
 .tile:hover {
-  transform: translate(0, -20px) scale(1.1);
+  transform: translate(10px,0) scale(1.05);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 20px 24px;;
   z-index: 2;
 }
 
-.container {
-  margin: 0 auto;
+.info.score{
+  font-family:"font";
+  color:#F2FBFF;
+  height: 3rem;
+  font-size:32px;
+}
+
+.info.now{
+  font-family: "font";
+  color: #F2FBFF;
+  padding: 0px 0px 10px 0px;
+  font-size: 20px;
+}
+
+.info.menu{
+  color:#F2FBFF;
+  padding: 10px 20px 10px 10px
 }
 
 .comments-container {
@@ -104,6 +100,6 @@ body {
 }
 
 .weather {
-  max-width: 80%;
+  width: 80%;
   margin: auto;
 }
