@@ -46,8 +46,9 @@ div.toolbar > * {
 }
 
 .graph {
-  width: 70%;
+  width: 90%;
   margin:auto;
+  padding: 10px;
 }
 
 .tile {

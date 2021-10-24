@@ -1,4 +1,5 @@
 import { Bar } from 'react-chartjs-2';
+import { defaults } from 'react-chartjs-2';
 
 const Graph = ({meals,choice}) => {
 
