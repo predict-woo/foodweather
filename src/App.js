@@ -9,12 +9,15 @@ import Body from "./components/Body"
 import Comment from "./components/Comment"
 import Rating from "./components/Rating"
 import Current from "./components/Current"
+import Toolbar from "./components/Toolbar"
+// import { Toolbar } from "@mui/material"
 
 
 const App = () => {
 
   const [meals,setMeals] = useState([])
   const [choice,setChoice] = useState(0)
+  const [pagenumber,setPagenumber] = useState(0)
 
   useEffect(() => {
     fetchMeals()
@@ -35,9 +38,62 @@ const App = () => {
     setChoice(index)
   }
 
+  const changePage = (number) => {
+    setPagenumber(number)
+  }
+
   var meal = meals[choice]
 
   if (meals.length > 0) {
+
+    var page
+
+    var errorpage = (
+      <div>Error!</div>
+    )
+
+    var homepage = (
+      <div className="full">
+        <Body
+          choice = {choice}
+          meals = {meals}
+          onChoice = {onChoice}
+        />
+        <Current
+            choice = {choice}
+            meals = {meals}
+        />
+      </div>
+    )
+
+    var commentpage = (
+      <div className="full">
+        <Body
+          choice = {choice}
+          meals = {meals}
+          onChoice = {onChoice}
+        />
+        <Comment
+        
+        />
+      </div>
+    )
+
+    switch(pagenumber) {
+      case 0:
+        page = homepage;
+        break;
+      case 1:
+        page = commentpage;
+        break;
+      default:
+        console.log(1)
+    }
+
+
+
+
+
     return (
       <Router>
           <Route
@@ -45,28 +101,10 @@ const App = () => {
             exact
             render={(props) => (
               <>
-                <Body
-                  choice = {choice}
-                  meals = {meals}
-                  onChoice = {onChoice}
+                <Toolbar
+                  changePage = {changePage}
                 />
-                <Current
-                    choice = {choice}
-                    meals = {meals}
-                />
-                {/* <Header
-                  choice = {choice}
-                  meals = {meals}
-                />
-                <Body
-                  choice = {choice}
-                  meals = {meals}
-                  onChoice = {onChoice}
-                />
-                <Rating meal={meal} />
-                <Comment 
-                  meal = {meal}
-                /> */}
+                {page}
               </>
             )}
           />

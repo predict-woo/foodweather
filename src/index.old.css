@@ -5,29 +5,8 @@
   font-style: normal;
 }
 
-
 body {
   background-color: #ebebeb;
-}
-
-.full {
-  display: flex;
-}
-
-.toolbar {
-  display:flex;
-  height: 3rem;
-}
-
-.current {
-  width:30% ;
-  min-width: 25rem;
-  text-align: center;
-}
-
-.graph {
-  width:80%;
-  margin:auto;
 }
 
 .title {
@@ -66,14 +45,19 @@ body {
 }
 
 .container {
-  width: 50%
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%
 }
 
 .tile {
-  display: flex;
+  user-select: none;
   font-size: 16px;
-  width: 100%;
-  height: 3rem;
+  width: 10%;
+  min-width: 100px;
+  max-width: 120px;
+  height: 9rem;
+  text-align: center;
   background-color: white;
   border-radius: 5px;
   padding: 1% 1% 1% 1%;
@@ -82,6 +66,17 @@ body {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 15px;
 }
 
+.tile.m {
+  background: linear-gradient(#fee5de,#fee5de, #a5b4c9);
+}
+
+.tile.l {
+  background: linear-gradient( #ffd861, #c3e7ff, #c3e7ff );
+}
+
+.tile.e {
+  background: linear-gradient(#ffd59b,#fcad97, #ec788b,#a1487c);
+}
 
 .tile:hover {
   transform: translate(0, -20px) scale(1.1);
@@ -104,6 +99,16 @@ body {
 }
 
 .weather {
+  filter: drop-shadow( 2px 2px 3px rgba(0, 0, 0, .4) ) drop-shadow( -2px -2px 3px #fff );
   max-width: 80%;
   margin: auto;
+}
+
+
+div.front div.weather {
+  /* filter:none */
+}
+
+div.header > * {
+  padding: 0px 10px 10px 10px;
 }
