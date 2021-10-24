@@ -9,7 +9,7 @@ const Tile = ({meal,index,onChoice}) => {
 
     return (
         <div onClick = {()=>onChoice(index)} className = {meal.time===0 ? ("tile m") : (meal.time===1 ? ("tile l") : (meal.time===2 ? ("tile e") : ("tile")))}>
-            <h3>{mealtimeinstr}</h3>
+            <div>{mealtimeinstr}</div>
             <Weather
                 meal = {meal}
             />
